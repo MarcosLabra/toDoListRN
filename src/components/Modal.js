@@ -4,9 +4,9 @@ import Button from "./Button";
 
 const Modal = ({
     modalVisible,
-    //   selectedItem,
-    //   onCancelModal,
-    //   onDeleteModal,
+      selectedItem,
+      onCancelModal,
+      onDeleteModal,
 }) => {
     return (
         <RNmodal animationType="slide" transparent={true} visible={modalVisible}>
@@ -15,21 +15,21 @@ const Modal = ({
                     <Text style={styles.modalTitle}>Eliminar Item</Text>
                     <Text style={styles.modalText}>
                         ¿Está seguro que desea eliminar el item{" "}
-                        <Text style={styles.modalBoldText}>item 1</Text>?
+                        <Text style={styles.modalBoldText}>{selectedItem?.value}</Text>?
                     </Text>
                     <View style={styles.modalActions}>
                         <Button
                             styleButtonType={styles.buttonDelete}
                             title="Eliminar"
-                        //   onPress={() => {
-                        //     onDeleteModal(selectedItem.id);
-                        //   }}
+                            onPress={() => {
+                                onDeleteModal(selectedItem.id);
+                            }}
                         />
                         <Button
                             styleButtonType={styles.buttonCancel}
                             styleButtonText={styles.buttonText}
                             title="Cancelar"
-                        //   onPress={onCancelModal}
+                            onPress={onCancelModal}
                         />
                     </View>
                 </View>
