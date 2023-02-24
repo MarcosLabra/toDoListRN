@@ -9,7 +9,7 @@ const NewItemHeader = ({
   return (
     <View style={styles.addItemInputContainer}>
       <TextInput
-        placeholder="Ingrese un item"
+        placeholder="Agregue una tarea"
         style={styles.input}
         onChangeText={onChangeText}
         value={itemText}
@@ -28,14 +28,15 @@ export default NewItemHeader;
 const styles = StyleSheet.create({
   addItemInputContainer: {
     width: Dimensions.get('window').width,
-    marginTop: 30,
-    padding: 40,
+    marginTop: 50,
+    marginBottom: 40,
+    padding: 20,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
   },
   input: {
-    width: 200,
+    width: 250,
     color:'#1D300F',
     borderBottomColor: "#1D300F",
     borderBottomWidth: 1,
