@@ -53,7 +53,7 @@ export default function App() {
       <StatusBar style="auto" />
       {items.length !== 0 &&
         <View style={styles.instructionsContainer}>
-          <Text style={styles.instructions}> *Toque el item para marcar la tarea como realizada</Text>
+          <Text style={styles.instructions}> *Toque algun item para marcar la tarea como realizada</Text>
           <Text style={styles.instructions}> **Mantenga para eliminarla</Text>
         </View>
       }
