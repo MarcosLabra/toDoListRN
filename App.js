@@ -1,13 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, NewItemHeader, ListItem } from './src/components';
 
 export default function App() {
   const [itemText, setItemText] = useState("");
+  const [buttonDisabled, setButtonDisabled] = useState(true);
   const [items, setItems] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+
+  useEffect(() => {
+    if (itemText !== '') {
+      setButtonDisabled(false)
+    } else {
+      setButtonDisabled(true)
+    }
+  });
 
   const onChangeText = (text) => {
     setItemText(text);
@@ -42,6 +51,7 @@ export default function App() {
         onChangeText={onChangeText}
         itemText={itemText}
         addItemToState={addItemToState}
+        disabled={buttonDisabled}
       />
       <ListItem items={items} openModal={openModal} />
       <Modal

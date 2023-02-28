@@ -12,7 +12,7 @@ const Button = ({
             style={[styles.button, styleButtonType]}
             onPress={onPress}
         >
-            <Text style={[styles.buttonText, styleButtonText] }>{title}</Text>
+            <Text style={[styles.buttonText, styleButtonText]}>{title}</Text>
         </Pressable>
     );
 };
